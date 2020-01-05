@@ -1,0 +1,14 @@
+E:\projects\TTClips_API\TTClips_API\bin\Debug\netcoreapp2.1\TTClips_API.deps.json
+E:\projects\TTClips_API\TTClips_API\bin\Debug\netcoreapp2.1\TTClips_API.runtimeconfig.json
+E:\projects\TTClips_API\TTClips_API\bin\Debug\netcoreapp2.1\TTClips_API.runtimeconfig.dev.json
+E:\projects\TTClips_API\TTClips_API\bin\Debug\netcoreapp2.1\TTClips_API.dll
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.csprojAssemblyReference.cache
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.csproj.CoreCompileInputs.cache
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.RazorAssemblyInfo.cache
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.RazorAssemblyInfo.cs
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.AssemblyInfoInputs.cache
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.AssemblyInfo.cs
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.RazorTargetAssemblyInfo.cache
+E:\projects\TTClips_API\TTClips_API\bin\Debug\netcoreapp2.1\TTClips_API.pdb
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.dll
+E:\projects\TTClips_API\TTClips_API\obj\Debug\netcoreapp2.1\TTClips_API.pdb
