@@ -19,10 +19,10 @@ namespace TTClips_API.Controllers
             var client = new RestClient("https://api.twitch.tv/helix/users/follows?from_id=23161357&first=100");
             client.AddDefaultHeader("Client-ID", "4kx7npmg3oz9prr62i2slbr6reat1w");
             var request = new RestRequest(Method.GET);
-            
+
             var cancellationTokenSource = new CancellationTokenSource();
             IRestResponse response = await client.ExecuteTaskAsync(request, cancellationTokenSource.Token);
-           
+
 
 
             return Ok(response.Content);
