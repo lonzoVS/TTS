@@ -10,6 +10,7 @@ namespace TTClips_API.Models
         public int Id { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
+        public int TwitchId { get; set; }
         public ICollection<Subscription> Subscriptions { get; set; }
     }
 }

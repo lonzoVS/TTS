@@ -1,10 +1,11 @@
+using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using TTClips_API.Controllers;
 using Xunit;
 
-namespace TTClips_API_Tests
+namespace TTClips_API_Tests.ControllerTests
 {
     public class ClipsControllerTests
     {
@@ -17,8 +18,13 @@ namespace TTClips_API_Tests
             var result = await controller.GetChannelClips("lirik");
 
             // Assert
-            Assert.IsType<OkObjectResult>(result);
-         }
+            result.Should().BeOfType<OkObjectResult>();
+        }
+
+
+        
+
+
 
     }
 }

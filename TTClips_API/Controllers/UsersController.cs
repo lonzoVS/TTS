@@ -17,17 +17,38 @@ namespace TTClips_API.Controllers
         public async Task<IActionResult> Get()
         {
             var client = new RestClient("https://api.twitch.tv/helix/users/follows?from_id=23161357&first=100");
+            client.AddDefaultHeader("Authorization", "Bearer 8k5jahjp3b9k7kozh2um7r39wfzfy5");
             client.AddDefaultHeader("Client-ID", "4kx7npmg3oz9prr62i2slbr6reat1w");
             var request = new RestRequest(Method.GET);
 
-            var cancellationTokenSource = new CancellationTokenSource();
-            IRestResponse response = await client.ExecuteTaskAsync(request, cancellationTokenSource.Token);
+            IRestResponse response = await client.ExecuteAsync(request);
 
-
-
-            return Ok(response.Content);
+           return Ok(response.Content);
 
         }
+
+        [HttpGet("userName")]
+        public async Task<IActionResult> GetUserInfo(string userName)
+        {
+            //curl - H 'Client-ID: uo6dggojyb8d6soh92zknwmi5ej1q2' \
+            //-H 'Authorization: Bearer cfabdegwdoklmawdzdo98xt2fo512y' \
+            //-X GET 'https://api.twitch.tv/helix/users?id=44322889'
+            var client = new RestClient($"https://api.twitch.tv/helix/users?login={userName}");
+            client.AddDefaultHeader("Authorization", "Bearer 8k5jahjp3b9k7kozh2um7r39wfzfy5");
+            client.AddDefaultHeader("Client-ID", "4kx7npmg3oz9prr62i2slbr6reat1w");
+
+            var request = new RestRequest(Method.GET);
+
+            IRestResponse response = await client.ExecuteAsync(request);
+
+            if (response.IsSuccessful)
+            {
+                return Ok(response.Content);
+            }
+
+            return BadRequest(response.Content);
+        }
+
 
         // GET api/values/5
         [HttpGet("{id}")]
