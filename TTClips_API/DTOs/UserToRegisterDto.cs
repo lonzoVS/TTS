@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TTClips_API.DTOs
 {
-    public class UserForRegisterDto
+    public class UserToRegisterDto
     {
         public string Username { get; set; }
     }
