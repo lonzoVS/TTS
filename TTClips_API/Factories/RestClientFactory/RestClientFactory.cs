@@ -6,9 +6,9 @@ using RestSharp;
 
 namespace TTClips_API.Factories.RestClientFactory
 {
-    public class RestClientFactory : IRestClientFactroy
+    public class RestClientFactory : IRestClientFactory
     {
-        public RestClient Create(string baseUrl)
+        public IRestClient Create(string baseUrl)
         {
             return new RestClient(baseUrl);
         }

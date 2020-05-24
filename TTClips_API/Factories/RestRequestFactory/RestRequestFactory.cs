@@ -8,7 +8,7 @@ namespace TTClips_API.Factories.RestRequestFactory
 {
     public class RestRequestFactory : IRestRequestFactory
     {
-        public RestRequest Create(string resource, Method method)
+        public IRestRequest Create(string resource, Method method)
         {
             return new RestRequest(resource, method);
         }

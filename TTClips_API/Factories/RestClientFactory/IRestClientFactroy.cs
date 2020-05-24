@@ -2,8 +2,8 @@
 
 namespace TTClips_API.Factories.RestClientFactory
 {
-    public interface IRestClientFactroy
+    public interface IRestClientFactory
     {
-        RestClient Create(string baseUrl);
+        IRestClient Create(string baseUrl);
     }
 }

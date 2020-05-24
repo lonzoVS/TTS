@@ -10,7 +10,7 @@ namespace TTClips_API_Tests.FactoriesTests
 {
     public class RestFactoryTests
     {
-        IRestClientFactroy factory;
+        IRestClientFactory factory;
         public RestFactoryTests()
         {
             factory = new RestClientFactory();
