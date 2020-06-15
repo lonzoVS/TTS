@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace TTClips_API.Services.Interfaces
 {
-    interface IRestClientService 
+    public interface IRestClientService 
     {
         IRestResponse Execute(string url, string resource, Method method);
         Task<IRestResponse> ExecuteAsync(string url, string resource, Method method);
+        void AddDefaultHeader(string name, string content);
+        void AddDefaultQueryParameter(string name, string content);
+
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using TTClips_API.Services.Interfaces;
 
 namespace TTClips_API.Controllers
 {
@@ -12,22 +13,27 @@ namespace TTClips_API.Controllers
     [ApiController]
     public class ClipsController : ControllerBase
     {
+        private readonly IRestClientService _restClientService;
 
-
+        public ClipsController(IRestClientService restClientService)
+        {
+            _restClientService = restClientService;
+        }
 
         // GET api/values/5
         [HttpGet("{name}")]
         public async Task<IActionResult> GetChannelClips(string name)
         {
-            var client = new RestClient("https://api.twitch.tv/kraken/clips/top");
-            client.AddDefaultHeader("Accept", "application/vnd.twitchtv.v5+json")
-                .AddDefaultHeader("Client-ID", "4kx7npmg3oz9prr62i2slbr6reat1w")
-                .AddDefaultQueryParameter("channel", name);
-            
-            var request = new RestRequest(Method.GET);
+            //var client = new RestClient("https://api.twitch.tv/kraken/clips/top");
+            //client.AddDefaultHeader("Accept", "application/vnd.twitchtv.v5+json")
+            //    .AddDefaultHeader("Client-ID", "4kx7npmg3oz9prr62i2slbr6reat1w")
+            //    .AddDefaultQueryParameter("channel", name);
 
-            var cancellationTokenSource = new CancellationTokenSource();
-            IRestResponse response = await client.ExecuteTaskAsync(request, cancellationTokenSource.Token);
+            //var request = new RestRequest(Method.GET);
+
+            //var cancellationTokenSource = new CancellationTokenSource();
+            //IRestResponse response = await client.ExecuteTaskAsync(request, cancellationTokenSource.Token);
+            var response = await _restClientService.ExecuteAsync("https://api.twitch.tv/kraken", "/clips/top", Method.GET);
 
             return Ok(response.Content);
             //curl - H 'Accept: application/vnd.twitchtv.v5+json' \

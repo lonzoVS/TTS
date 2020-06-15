@@ -13,26 +13,38 @@ namespace TTClips_API.Services
     {
         private readonly IRestClientFactory _restClientFactory;
         private readonly IRestRequestFactory _restRequestFactory;
+        private IRestClient _client;
 
         public RestClientService(IRestClientFactory restClientFactory, IRestRequestFactory restRequestFactory)
         {
             _restClientFactory = restClientFactory;
             _restRequestFactory = restRequestFactory;
         }
+
+        public void AddDefaultHeader(string name, string content)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddDefaultQueryParameter(string name, string content)
+        {
+            throw new NotImplementedException();
+        }
+
         public IRestResponse Execute(string baseUrl, string resource, Method method)
         {
-            var client = _restClientFactory.Create(baseUrl);
+            var _client = _restClientFactory.Create(baseUrl);
             var request = _restRequestFactory.Create(resource, method);
 
-            return client.Execute(request);
+            return _client.Execute(request);
         }
 
         public async Task<IRestResponse> ExecuteAsync(string baseUrl, string resource, Method method)
         {
-            var client = _restClientFactory.Create(baseUrl);
+            _client = _restClientFactory.Create(baseUrl);
             var request = _restRequestFactory.Create(resource, method);
 
-            return await client.ExecuteAsync(request);
+            return await _client.ExecuteAsync(request);
         }
     }
 }
